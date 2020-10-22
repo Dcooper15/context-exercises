@@ -5,6 +5,8 @@ const Demo = () => {
     const [value, dispatch] = useContext(StateContext);
     const [input, setInput] = useState("");
     const { name } = value;
+   
+   
     
     const _handleChange = (name) => {
         setInput(name);
@@ -19,11 +21,13 @@ const Demo = () => {
         setInput("");
     };
 
+  
+
     return (
         <>
         <form onSubmit={e => _handleSubmit(e, dispatch)}>
             <label>
-            <h1>Welcome {name}, this is built with React Context!</h1>
+            <h1>The cat's name is {name}.</h1>
             <input type="text" name="newVictim" placeholder="Enter Name" value={input} onChange={event => _handleChange(event.target.value)}
             />
             </label>
